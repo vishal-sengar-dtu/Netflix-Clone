@@ -15,8 +15,27 @@ export default function Signup() {
   const [error, setError] = useState("");
 
   const isInvalid = firstName === " " || password === "" || emailAddress === "";
-  const handleSignin = (event) => {
+  const handleSignup = (event) => {
     event.preventDefault();
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(emailAddress, password)
+      .then((result) =>
+        result.user.updateProfile({
+          displayName: firstName,
+          photoURL: Math.floor(Math.random() * 5) + 1,
+        })
+          .then(() => {
+            history.push(ROUTES.BROWSE);
+          })
+      )
+      .catch((error) => {
+        setFirstName("");
+        setEmailAddress("");
+        setPassword("");
+        setError(error.message);
+      })
   };
 
   return (
@@ -26,7 +45,7 @@ export default function Signup() {
           <Form.Title>Sign Up</Form.Title>
           {error && <Form.Error>{error}</Form.Error>}
 
-          <Form.Base onSubmit={handleSignin} method="POST">
+          <Form.Base onSubmit={handleSignup} method="POST">
             <Form.Input
               placeholder="First name"
               value={firstName}
