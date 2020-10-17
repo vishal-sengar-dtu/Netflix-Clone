@@ -1,4 +1,5 @@
-import React,{useState, useContext, useEffect} from "react";
+import React, { useState, useContext, useEffect } from "react";
+import Fuse from "fuse.js";
 import { SelectProfileContainer } from './profiles';
 import { FirebaseContext } from "../context/firebase";
 import { Player, Card, Header, Loading } from "../components";
@@ -25,6 +26,19 @@ export function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.title', 'data.genre', 'data.description']
+    })
+    const result = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && result.length > 0) {
+      setSlideRows(result);
+    } else {
+      setSlideRows(slides[category]);
+    }
+  }, [searchTerm])
 
   return profile.displayName ? (
     <>
