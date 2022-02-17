@@ -62,7 +62,7 @@ export function BrowseContainer({ slides }) {
             </Header.TextLink>
           </Header.Group>
           <Header.Group>
-            <Header.Search 
+            <Header.Search
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
@@ -72,6 +72,12 @@ export function BrowseContainer({ slides }) {
                 <Header.Group>
                   <Header.Picture src={user.photoURL} />
                   <Header.TextLink>{user.displayName}</Header.TextLink>
+                </Header.Group>
+                <Header.Group>
+                  <Header.TextLink onClick={() => true}>Account</Header.TextLink>
+                </Header.Group>
+                <Header.Group>
+                  <Header.TextLink onClick={() => true}>Help Centre</Header.TextLink>
                 </Header.Group>
                 <Header.Group>
                   <Header.TextLink onClick={() => firebase.auth().signOut()}>Sign out</Header.TextLink>
@@ -119,6 +125,6 @@ export function BrowseContainer({ slides }) {
       <FooterContainer />
     </>
   ) : (
-      <SelectProfileContainer user={user} setProfile={setProfile} />
-    );
+    <SelectProfileContainer user={user} setProfile={setProfile} />
+  );
 } 

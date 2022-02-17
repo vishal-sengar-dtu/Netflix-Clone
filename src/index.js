@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
+import App from "./App";
 import { GlobalStyles } from "./global-styles";
 import { firebase } from "./lib/firebase.prod";
 import { FirebaseContext } from "./context/firebase";
