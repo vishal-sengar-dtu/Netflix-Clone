@@ -1,7 +1,5 @@
 # Netflix Clone
 
-- Demo: <>
-
 ### Video Walktrough
 
 ![](https://github.com/vishal-sengar-dtu/Netflix-Clone/blob/master/src/demo.gif?raw=true)
