@@ -1,12 +1,11 @@
 # Netflix Clone
 
-- Demo: <>
-
 ### Video Walktrough
 
-![](https://github.com/vishal-sengar-dtu/Netflix-Clone/blob/master/src/netflix-demo.gif?raw=true)
+![](https://github.com/vishal-sengar-dtu/Netflix-Clone/blob/master/src/demo.gif?raw=true)
 
-This project is a simplified front end clone of Netflix. It was created with React and CSS (Grid and Flexbox).
+Netflix clone build using react framework and styled components. Fuse.js is used for live search functionality.
+Firebase authentication and Cloud Firestore services were used for backend connectivity
 
 ### Tools used
 
