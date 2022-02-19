@@ -4,7 +4,8 @@
 
 ![](https://github.com/vishal-sengar-dtu/Netflix-Clone/blob/master/src/demo.gif?raw=true)
 
-This project is a simplified front end clone of Netflix. It was created with React and CSS (Grid and Flexbox).
+Netflix clone build using react framework and styled components. Fuse.js is used for live search functionality.
+Firebase authentication and Firestore services were used for backed connectivity
 
 ### Tools used
 
